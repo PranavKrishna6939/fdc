@@ -92,7 +92,7 @@ def pridict(grid, y):
         data.loc[y, 'Decision'] = 2
         print("tie")
 
-data = pd.read_csv(r"C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\pranav_solution_V2.csv")
+data = pd.read_csv(r"\Solution.csv")
 for y in range (0, 4495):
     symbol1 = data.loc[y, 'POS_1']
     symbol2 = data.loc[y, 'POS_2']
@@ -107,4 +107,4 @@ for y in range (0, 4495):
     pridict(grid, y)
     print(y)
 
-data.to_csv("pranav_solution_final_V2.csv", index=False)
+data.to_csv("SolutionFinal.csv", index=False)
