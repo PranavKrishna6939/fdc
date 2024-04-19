@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-data = pd.read_csv(r'C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\Dataset\Train\Grid_labels.csv')
+data = pd.read_csv(r'\Dataset\Train\Grid_labels.csv')
 
 def cropBoard(image):
   crop = image[62:425, 148:511]
@@ -23,18 +23,18 @@ def transformImage(crop):
 
 def downImageZero(img, j):
   image = Image.fromarray(img, mode="L")
-  image.save(rf"C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\Zero_Template\Zero{j}.png")
+  image.save(rf"\Zero_Template\Zero{j}.png")
 
 def downImageCross(img, i):
   image = Image.fromarray(img, mode="L")
-  image.save(rf"C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\Cross_Template\Cross{i}.png")
+  image.save(rf"\Cross_Template\Cross{i}.png")
 
 i = 0
 j = 0
 
 for y in range (0, 25):
     id = data.loc[y, 'ID']
-    imgtest = cv2.imread(rf'C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\Dataset\Train\Grids\{id}.png')
+    imgtest = cv2.imread(rf'\Train\Grids\{id}.png')
     #plt.imshow(imgtest)
     print(f'{y} {id}')
     crop = cropBoard(imgtest)
