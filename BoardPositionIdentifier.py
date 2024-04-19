@@ -6,7 +6,7 @@ import glob
 import os
 from pathlib import Path
 
-data = pd.read_csv(r'C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\Dataset\Sample_submission.csv')
+data = pd.read_csv(r'\Dataset\Sample_submission.csv')
 
 
 def cropBoard(image):
@@ -69,7 +69,7 @@ def solution(imgtest, y, data):
   print(y)
 
 def detect_symbol(cell_image):
-  image_dir_o = r'C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\Zero_Template'
+  image_dir_o = r'\Zero_Template'
   image_files_o = glob.glob(image_dir_o + '/*.png')
   corr_o = 1000000000000000
 
@@ -88,7 +88,7 @@ def detect_symbol(cell_image):
       corr_o = norm_o
 
 
-  image_dir_x = r'C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\Cross_Template'
+  image_dir_x = r'\Cross_Template'
   image_files_x = glob.glob(image_dir_x + '/*.png')
   corr_x = 1000000000000000
 
@@ -111,7 +111,7 @@ def detect_symbol(cell_image):
   else:
       return 0
   
-image_dir = r'C:\Users\Kumar\Desktop\Desktop\Python\icg-freshers-data-science-competition\Dataset\Test'
+image_dir = r'\Dataset\Test'
 image_files = glob.glob(image_dir + '/*.png')
 
 for x in image_files:
